@@ -1,0 +1,16 @@
+AUROC (normal vs attack): 0.8531
+false alarm rate on normal traffic (score > 0.95): 0.0531
+
+class             flagged  mean score
+Normal              0.053       0.501
+Generic             0.974       0.989
+Exploits            0.083       0.836
+Fuzzers             0.092       0.674
+DoS                 0.085       0.868
+Reconnaissance      0.025       0.712
+Analysis            0.110       0.891
+Backdoor            0.095       0.853
+Shellcode           0.000       0.656
+Worms               0.077       0.841
+
+saved models/anomaly_iforest.joblib

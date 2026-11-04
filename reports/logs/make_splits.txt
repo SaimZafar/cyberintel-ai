@@ -1,0 +1,10 @@
+fit: (140273, 46) val: (35068, 46)
+test_eval: (81554, 47) | unseen in train: 73013
+demo pool: (778, 46)
+
+fit classes:
+ {'Normal': 44800, 'Generic': 32000, 'Exploits': 26714, 'Fuzzers': 14547, 'DoS': 9811, 'Reconnaissance': 8393, 'Analysis': 1600, 'Backdoor': 1397, 'Shellcode': 907, 'Worms': 104}
+val classes:
+ {'Normal': 11200, 'Generic': 8000, 'Exploits': 6679, 'Fuzzers': 3637, 'DoS': 2453, 'Reconnaissance': 2098, 'Analysis': 400, 'Backdoor': 349, 'Shellcode': 226, 'Worms': 26}
+demo classes:
+ {'DoS': 100, 'Exploits': 100, 'Fuzzers': 100, 'Generic': 100, 'Normal': 100, 'Reconnaissance': 100, 'Shellcode': 100, 'Analysis': 29, 'Backdoor': 28, 'Worms': 21}

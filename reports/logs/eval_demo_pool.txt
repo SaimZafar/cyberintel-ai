@@ -1,0 +1,16 @@
+         class  events  correct most_common_mistake  alert_rate
+        Normal     100    0.710             Fuzzers       0.140
+       Generic     100    0.510            Exploits       0.890
+      Exploits     100    0.870      Reconnaissance       0.900
+       Fuzzers     100    0.810              Normal       0.400
+           DoS     100    0.310            Exploits       0.860
+Reconnaissance     100    0.910            Exploits       0.620
+      Analysis      29    0.000            Exploits       0.138
+      Backdoor      28    0.679            Exploits       0.857
+     Shellcode     100    0.880            Exploits       0.810
+         Worms      21    0.762            Exploits       0.857
+
+attacks that raise an alert (High or Critical): 0.729
+normal events that raise an alert:              0.14
+attacks the engine labels Normal:                0.04
+overall category accuracy:                       0.688

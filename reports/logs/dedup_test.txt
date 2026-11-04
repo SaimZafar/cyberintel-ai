@@ -1,0 +1,6 @@
+done: all rows
+done: deduplicated
+
+    training  train_rows  macro_f1_val  macro_f1_val_dedup  binary_f1  f1_Normal  f1_DoS  f1_Backdoor  f1_Worms
+    all rows      140273         0.657               0.721      0.966      0.924   0.485        0.207     0.690
+deduplicated       80848         0.622               0.715      0.966      0.923   0.418        0.139     0.678

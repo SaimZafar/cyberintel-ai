@@ -1,0 +1,11 @@
+class,events,correct,most_common_mistake,alert_rate
+Normal,100,0.71,Fuzzers,0.14
+Generic,100,0.51,Exploits,0.89
+Exploits,100,0.87,Reconnaissance,0.9
+Fuzzers,100,0.81,Normal,0.4
+DoS,100,0.31,Exploits,0.86
+Reconnaissance,100,0.91,Exploits,0.62
+Analysis,29,0.0,Exploits,0.138
+Backdoor,28,0.679,Exploits,0.857
+Shellcode,100,0.88,Exploits,0.81
+Worms,21,0.762,Exploits,0.857

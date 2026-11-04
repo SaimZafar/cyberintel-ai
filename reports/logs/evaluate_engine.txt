@@ -1,0 +1,27 @@
+INCIDENTS (events saved for the analyst)
+  attacks that create an incident:       0.9865
+  normal events that create an incident: 0.1277
+
+WHAT THE ANOMALY DETECTOR ADDS
+  attacks the classifier called Normal: 324
+  of those, caught by the anomaly score: 2 (0.6%)
+  extra false incidents it causes:       128 (1.1% of normal events)
+
+ALERTS (High or Critical, these notify the phone)
+  alert precision: 0.9725
+  alert recall:    0.9056
+  false alerts per 1000 normal events: 54.6
+
+SEVERITY LEVEL BY TRUE CLASS (each row adds up to 1)
+severity_level    Low  Medium   High  Critical
+true                                          
+Normal          0.714   0.231  0.054     0.001
+Generic         0.000   0.001  0.020     0.979
+Exploits        0.001   0.044  0.570     0.386
+Fuzzers         0.012   0.371  0.612     0.004
+DoS             0.000   0.026  0.923     0.051
+Reconnaissance  0.000   0.182  0.815     0.003
+Analysis        0.000   0.115  0.855     0.030
+Backdoor        0.000   0.043  0.900     0.057
+Shellcode       0.000   0.208  0.345     0.447
+Worms           0.000   0.038  0.346     0.615

@@ -1,0 +1,6 @@
+                           variant  alert_precision  alert_recall  false_alerts_per_1000  anomaly_false_incidents_%  attacks_caught_by_anomaly  Generic_critical  Worms_critical  mean_score_Generic  mean_score_Worms
+   current (0.4/0.3/0.3, thr 0.95)            0.972         0.906                 54.643                      4.688                         17             0.979           0.615              90.361            85.927
+no anomaly in severity (0.5/0/0.5)            0.975         0.679                 37.232                      4.688                         17             0.003           0.731              84.666            87.654
+        less anomaly (0.5/0.2/0.3)            0.967         0.705                 51.964                      4.688                         17             0.979           0.615              90.388            85.619
+             anomaly incidents off            0.972         0.906                 54.643                      0.000                          0             0.979           0.615              90.361            85.927
+       stricter anomaly (thr 0.99)            0.972         0.906                 54.643                      1.143                          2             0.979           0.615              90.361            85.927

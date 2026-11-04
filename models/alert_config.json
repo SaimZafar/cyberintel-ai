@@ -1,0 +1,13 @@
+{
+  "threshold": 0.956,
+  "budget_per_1000_normal": 20,
+  "role": "deployed threshold, recalibrated on a labeled sample of the target partition",
+  "chosen_on": "even-hash half of the official test partition",
+  "evaluated_on": "odd-hash half: 20.6 false alerts per 1000 Normal, attack recall 0.878",
+  "out_of_fold_alternative": {
+    "threshold": 0.867,
+    "chosen_on": "out-of-fold scores on the training partition",
+    "test_partition_result": "88.6 false alerts per 1000 Normal, attack recall 0.925"
+  },
+  "note": "recalibrate on labeled target data before deploying elsewhere"
+}

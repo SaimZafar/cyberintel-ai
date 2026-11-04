@@ -1,0 +1,7 @@
+log columns with negative values: []
+categories kept: {'proto': ['tcp', 'udp', 'unas', 'arp', 'ospf', 'sctp'], 'service': ['-', 'dns', 'http', 'smtp', 'ftp-data', 'ftp', 'ssh', 'pop3'], 'state': ['INT', 'FIN', 'CON', 'REQ']}
+number of features: 60
+fit (140273, 60) NaN: 0
+val (35068, 60) NaN: 0
+test_eval (81554, 60) NaN: 0
+demo_pool (778, 60) NaN: 0

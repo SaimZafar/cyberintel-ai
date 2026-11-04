@@ -1,0 +1,20 @@
+saved reports/figures/confusion_val_best.png
+
+Biggest mistakes (true class -> predicted as):
+  1424  Normal          -> Fuzzers
+  1282  Exploits        -> DoS
+  1174  Exploits        -> Backdoor
+   808  DoS             -> Backdoor
+   267  Exploits        -> Analysis
+   241  DoS             -> Exploits
+   218  Exploits        -> Reconnaissance
+   183  Reconnaissance  -> DoS
+   171  DoS             -> Analysis
+   155  Fuzzers         -> Normal
+   152  Reconnaissance  -> Backdoor
+   141  Fuzzers         -> DoS
+
+Where do the weak classes go?
+DoS -> {'DoS': 0.48, 'Backdoor': 0.33, 'Exploits': 0.1}
+Analysis -> {'DoS': 0.34, 'Backdoor': 0.3, 'Analysis': 0.28}
+Backdoor -> {'Backdoor': 0.54, 'DoS': 0.32, 'Analysis': 0.07}

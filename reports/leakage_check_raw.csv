@@ -1,0 +1,25 @@
+protocol,model,test rows,share,accuracy,lookup accuracy
+"pooled, random",xgboost,seen in training,0.45240273263395553,0.7648855618654277,0.7786955773532954
+"pooled, random",xgboost,not seen,0.5475972673660445,0.869557490669984,
+"pooled, random",random forest (full depth),seen in training,0.45240273263395553,0.7641541903286869,0.7786955773532954
+"pooled, random",random forest (full depth),not seen,0.5475972673660445,0.8670694864048338,
+"train partition, random",xgboost,seen in training,0.4711283469731102,0.7615906064641085,0.7721220191260137
+"train partition, random",xgboost,not seen,0.5288716530268899,0.8776082385291422,
+"train partition, random",random forest (full depth),seen in training,0.4711283469731102,0.7569301537344147,0.7721220191260137
+"train partition, random",random forest (full depth),not seen,0.5288716530268899,0.8746427993745619,
+"pooled, random",xgboost,seen in training,0.4560228887288581,0.7629961587708066,0.7744771660264618
+"pooled, random",xgboost,not seen,0.5439771112711419,0.8663637339439694,
+"pooled, random",random forest (full depth),seen in training,0.4560228887288581,0.7616730687153223,0.7744771660264618
+"pooled, random",random forest (full depth),not seen,0.5439771112711419,0.8670077641418298,
+"train partition, random",xgboost,seen in training,0.4665088824888078,0.7581295843520782,0.7713325183374083
+"train partition, random",xgboost,not seen,0.5334911175111923,0.8774921160938586,
+"train partition, random",random forest (full depth),seen in training,0.4665088824888078,0.7562347188264059,0.7713325183374083
+"train partition, random",random forest (full depth),not seen,0.5334911175111923,0.8737506013148751,
+"pooled, random",xgboost,seen in training,0.4542128106814068,0.7646227021468055,0.775378154861379
+"pooled, random",xgboost,not seen,0.5457871893185932,0.8683760074174453,
+"pooled, random",random forest (full depth),seen in training,0.4542128106814068,0.762265929639628,0.775378154861379
+"pooled, random",random forest (full depth),not seen,0.5457871893185932,0.8675558091434277,
+"train partition, random",xgboost,seen in training,0.4690467364338875,0.7526293391695544,0.7716578515411271
+"train partition, random",xgboost,not seen,0.5309532635661125,0.8720193340494092,
+"train partition, random",random forest (full depth),seen in training,0.4690467364338875,0.7499544045230713,0.7716578515411271
+"train partition, random",random forest (full depth),not seen,0.5309532635661125,0.8671321160042964,

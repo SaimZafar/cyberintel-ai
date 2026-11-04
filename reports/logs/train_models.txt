@@ -1,0 +1,29 @@
+{'model': 'rf_plain', 'accuracy': 0.8323, 'macro_f1': 0.5578, 'weighted_f1': 0.8175, 'binary_attack_f1': 0.9673, 'seconds': 10.6485}
+{'model': 'rf_weighted', 'accuracy': 0.7955, 'macro_f1': 0.6209, 'weighted_f1': 0.8142, 'binary_attack_f1': 0.9655, 'seconds': 11.5674}
+{'model': 'xgb_plain', 'accuracy': 0.8342, 'macro_f1': 0.6208, 'weighted_f1': 0.8151, 'binary_attack_f1': 0.9674, 'seconds': 40.6279}
+{'model': 'xgb_weighted', 'accuracy': 0.7834, 'macro_f1': 0.6264, 'weighted_f1': 0.8097, 'binary_attack_f1': 0.9632, 'seconds': 37.0104}
+
+        model  accuracy  macro_f1  weighted_f1  binary_attack_f1  seconds
+xgb_weighted    0.7834    0.6264       0.8097            0.9632  37.0104
+ rf_weighted    0.7955    0.6209       0.8142            0.9655  11.5674
+   xgb_plain    0.8342    0.6208       0.8151            0.9674  40.6279
+    rf_plain    0.8323    0.5578       0.8175            0.9673  10.6485
+
+BEST: xgb_weighted
+                precision    recall  f1-score   support
+
+        Normal      0.979     0.857     0.914     11200
+       Generic      0.999     0.982     0.990      8000
+      Exploits      0.880     0.534     0.664      6679
+       Fuzzers      0.667     0.851     0.748      3637
+           DoS      0.380     0.476     0.423      2453
+Reconnaissance      0.870     0.791     0.828      2098
+      Analysis      0.154     0.278     0.198       400
+      Backdoor      0.073     0.544     0.128       349
+     Shellcode      0.591     0.938     0.725       226
+         Worms      0.556     0.769     0.645        26
+
+      accuracy                          0.783     35068
+     macro avg      0.615     0.702     0.626     35068
+  weighted avg      0.863     0.783     0.810     35068
+

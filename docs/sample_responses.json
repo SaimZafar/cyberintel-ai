@@ -1,0 +1,312 @@
+{
+  "Backdoor": {
+    "incident": true,
+    "alert": true,
+    "p_attack": 0.9989953637123108,
+    "name_confidence": 0.9898202419281006,
+    "name_is_confident": true,
+    "attack_family": "Exploit-type",
+    "attack_category": "Backdoor",
+    "confidence": 0.9888258576393127,
+    "anomaly_score": 0.39691987203333084,
+    "severity_score": 80.0,
+    "severity_level": "High",
+    "severity_breakdown": {
+      "confidence": 0.9888258576393127,
+      "anomaly": 0.39691987203333084,
+      "category_weight": 0.95
+    },
+    "top_features": [
+      {
+        "name": "smean",
+        "value": 46.0,
+        "contribution": 1.427768588066101,
+        "direction": "supports",
+        "text": "average size of source packets is 46, lower than 91% of normal traffic"
+      },
+      {
+        "name": "dmean",
+        "value": 55.0,
+        "contribution": 0.7759108543395996,
+        "direction": "supports",
+        "text": "average size of destination packets is 55, within the usual range of normal traffic"
+      },
+      {
+        "name": "dloss",
+        "value": 2.0,
+        "contribution": 0.6677665710449219,
+        "direction": "supports",
+        "text": "destination packets lost or retransmitted is 2, within the usual range of normal traffic"
+      },
+      {
+        "name": "dbytes",
+        "value": 442.0,
+        "contribution": 0.6372221112251282,
+        "direction": "supports",
+        "text": "bytes sent by the destination is 442, within the usual range of normal traffic"
+      },
+      {
+        "name": "ct_dst_src_ltm",
+        "value": 1.0,
+        "contribution": 0.29736754298210144,
+        "direction": "supports",
+        "text": "recent connections with the same source and destination address is 1, within the usual range of normal traffic"
+      }
+    ],
+    "explanation_text": "The engine classified this flow as Backdoor with 99% confidence. Severity is High (score 80.0). A backdoor is a hidden way to bypass normal authentication and keep unauthorised remote access. Main reasons: average size of source packets is 46, lower than 91% of normal traffic; average size of destination packets is 55, within the usual range of normal traffic; destination packets lost or retransmitted is 2, within the usual range of normal traffic. These reasons show what the model relied on, not proof of malicious intent.",
+    "suggested_steps": [
+      "Check the destination host for unknown listening services or accounts",
+      "Review remote access logs",
+      "Isolate the host if the analyst confirms a compromise"
+    ],
+    "explanation_source": "template",
+    "model_version": "v1",
+    "missing_fields": [],
+    "processing_ms": 170.9
+  },
+  "Exploits": {
+    "incident": true,
+    "alert": true,
+    "p_attack": 0.9963325262069702,
+    "name_confidence": 0.8250741362571716,
+    "name_is_confident": true,
+    "attack_family": "Reconnaissance",
+    "attack_category": "Reconnaissance",
+    "confidence": 0.8220481872558594,
+    "anomaly_score": 0.7738263522059371,
+    "severity_score": 71.1,
+    "severity_level": "High",
+    "severity_breakdown": {
+      "confidence": 0.8220481872558594,
+      "anomaly": 0.7738263522059371,
+      "category_weight": 0.5
+    },
+    "top_features": [
+      {
+        "name": "service",
+        "value": "http",
+        "contribution": 0.7096320986747742,
+        "direction": "supports",
+        "text": "the service is http"
+      },
+      {
+        "name": "ct_dst_src_ltm",
+        "value": 1.0,
+        "contribution": 0.6267197132110596,
+        "direction": "supports",
+        "text": "recent connections with the same source and destination address is 1, within the usual range of normal traffic"
+      },
+      {
+        "name": "smean",
+        "value": 77.0,
+        "contribution": 0.5688599944114685,
+        "direction": "supports",
+        "text": "average size of source packets is 77, within the usual range of normal traffic"
+      },
+      {
+        "name": "dbytes",
+        "value": 354.0,
+        "contribution": 0.2723349928855896,
+        "direction": "supports",
+        "text": "bytes sent by the destination is 354, within the usual range of normal traffic"
+      },
+      {
+        "name": "dmean",
+        "value": 44.0,
+        "contribution": 0.2585567831993103,
+        "direction": "supports",
+        "text": "average size of destination packets is 44, within the usual range of normal traffic"
+      }
+    ],
+    "explanation_text": "The engine classified this flow as Reconnaissance with 82% confidence. Severity is High (score 71.1). Reconnaissance gathers information about a network and its hosts, for example by probing for open ports and services. Main reasons: the service is http; recent connections with the same source and destination address is 1, within the usual range of normal traffic; average size of source packets is 77, within the usual range of normal traffic. These reasons show what the model relied on, not proof of malicious intent.",
+    "suggested_steps": [
+      "Find the ports and hosts the source touched",
+      "Check whether the source is known or internal",
+      "Watch for later attacks from the same source"
+    ],
+    "explanation_source": "template",
+    "model_version": "v1",
+    "missing_fields": [],
+    "processing_ms": 97.4
+  },
+  "DoS": {
+    "incident": false,
+    "alert": false,
+    "p_attack": 0.9472038745880127,
+    "name_confidence": 0.6150501370429993,
+    "name_is_confident": false,
+    "attack_family": "Exploit-type",
+    "attack_category": "Exploits",
+    "confidence": 0.5825778841972351,
+    "anomaly_score": 0.840339260471691,
+    "severity_score": 75.5,
+    "severity_level": "High",
+    "severity_breakdown": {
+      "confidence": 0.5825778841972351,
+      "anomaly": 0.840339260471691,
+      "category_weight": 0.9
+    },
+    "top_features": [],
+    "explanation_text": "Below the alert threshold. No incident was created.",
+    "suggested_steps": [],
+    "explanation_source": "template",
+    "model_version": "v1",
+    "missing_fields": [],
+    "processing_ms": 43.7
+  },
+  "Shellcode": {
+    "incident": true,
+    "alert": true,
+    "p_attack": 0.996676504611969,
+    "name_confidence": 0.5343272089958191,
+    "name_is_confident": false,
+    "attack_family": "Exploit-type",
+    "attack_category": "Exploits",
+    "confidence": 0.5325513482093811,
+    "anomaly_score": 0.3981102596532996,
+    "severity_score": 60.2,
+    "severity_level": "Medium",
+    "severity_breakdown": {
+      "confidence": 0.5325513482093811,
+      "anomaly": 0.3981102596532996,
+      "category_weight": 0.9
+    },
+    "top_features": [
+      {
+        "name": "ct_srv_dst",
+        "value": 1.0,
+        "contribution": 0.4511609673500061,
+        "direction": "supports",
+        "text": "recent connections with the same service and destination address is 1, within the usual range of normal traffic"
+      },
+      {
+        "name": "ct_dst_src_ltm",
+        "value": 1.0,
+        "contribution": 0.3010747730731964,
+        "direction": "supports",
+        "text": "recent connections with the same source and destination address is 1, within the usual range of normal traffic"
+      },
+      {
+        "name": "smean",
+        "value": 186.0,
+        "contribution": 0.2474331557750702,
+        "direction": "supports",
+        "text": "average size of source packets is 186, within the usual range of normal traffic"
+      },
+      {
+        "name": "sbytes",
+        "value": 1862.0,
+        "contribution": 0.24507276713848114,
+        "direction": "supports",
+        "text": "bytes sent by the source is 1,862, within the usual range of normal traffic"
+      },
+      {
+        "name": "dttl",
+        "value": 252.0,
+        "contribution": 0.17573755979537964,
+        "direction": "supports",
+        "text": "destination time to live (TTL) is 252, within the usual range of normal traffic"
+      }
+    ],
+    "explanation_text": "The engine classified this flow as Exploits with 53% confidence. Severity is Medium (score 60.2). Exploits abuse a known flaw or bug in software to gain control or run unwanted actions. Main reasons: recent connections with the same service and destination address is 1, within the usual range of normal traffic; recent connections with the same source and destination address is 1, within the usual range of normal traffic; average size of source packets is 186, within the usual range of normal traffic. These values look ordinary on their own. The model relies on combinations of values, so treat this as a lead and verify it. These reasons show what the model relied on, not proof of malicious intent. The specific attack type is uncertain. Treat this as an Exploit-type attack until an analyst confirms it.",
+    "suggested_steps": [
+      "Identify the targeted service and check that it is patched",
+      "Review logs of the destination host around this time",
+      "Check for follow-up activity from the same source"
+    ],
+    "explanation_source": "template",
+    "model_version": "v1",
+    "missing_fields": [],
+    "processing_ms": 97.3
+  },
+  "Reconnaissance": {
+    "incident": true,
+    "alert": true,
+    "p_attack": 0.9994944334030151,
+    "name_confidence": 0.9980358481407166,
+    "name_is_confident": true,
+    "attack_family": "Reconnaissance",
+    "attack_category": "Reconnaissance",
+    "confidence": 0.9975312948226929,
+    "anomaly_score": 0.3680529722490886,
+    "severity_score": 65.9,
+    "severity_level": "High",
+    "severity_breakdown": {
+      "confidence": 0.9975312948226929,
+      "anomaly": 0.3680529722490886,
+      "category_weight": 0.5
+    },
+    "top_features": [
+      {
+        "name": "sbytes",
+        "value": 564.0,
+        "contribution": 1.957370400428772,
+        "direction": "supports",
+        "text": "bytes sent by the source is 564, within the usual range of normal traffic"
+      },
+      {
+        "name": "smean",
+        "value": 56.0,
+        "contribution": 1.8841137886047363,
+        "direction": "supports",
+        "text": "average size of source packets is 56, within the usual range of normal traffic"
+      },
+      {
+        "name": "sjit",
+        "value": 6968.700288,
+        "contribution": 0.6017331480979919,
+        "direction": "supports",
+        "text": "source jitter is 6,969, higher than 90% of normal traffic"
+      },
+      {
+        "name": "dmean",
+        "value": 44.0,
+        "contribution": 0.4128892421722412,
+        "direction": "supports",
+        "text": "average size of destination packets is 44, within the usual range of normal traffic"
+      },
+      {
+        "name": "ct_dst_src_ltm",
+        "value": 1.0,
+        "contribution": 0.4092889428138733,
+        "direction": "supports",
+        "text": "recent connections with the same source and destination address is 1, within the usual range of normal traffic"
+      }
+    ],
+    "explanation_text": "The engine classified this flow as Reconnaissance with 100% confidence. Severity is High (score 65.9). Reconnaissance gathers information about a network and its hosts, for example by probing for open ports and services. Main reasons: bytes sent by the source is 564, within the usual range of normal traffic; average size of source packets is 56, within the usual range of normal traffic; source jitter is 6,969, higher than 90% of normal traffic. These reasons show what the model relied on, not proof of malicious intent.",
+    "suggested_steps": [
+      "Find the ports and hosts the source touched",
+      "Check whether the source is known or internal",
+      "Watch for later attacks from the same source"
+    ],
+    "explanation_source": "template",
+    "model_version": "v1",
+    "missing_fields": [],
+    "processing_ms": 98.1
+  },
+  "Normal": {
+    "incident": false,
+    "alert": false,
+    "p_attack": 0.8351379632949829,
+    "name_confidence": 0.9914324283599854,
+    "name_is_confident": true,
+    "attack_family": "Fuzzers",
+    "attack_category": "Fuzzers",
+    "confidence": 0.8279828429222107,
+    "anomaly_score": 0.7048582694739974,
+    "severity_score": 69.3,
+    "severity_level": "High",
+    "severity_breakdown": {
+      "confidence": 0.8279828429222107,
+      "anomaly": 0.7048582694739974,
+      "category_weight": 0.5
+    },
+    "top_features": [],
+    "explanation_text": "Below the alert threshold. No incident was created.",
+    "suggested_steps": [],
+    "explanation_source": "template",
+    "model_version": "v1",
+    "missing_fields": [],
+    "processing_ms": 48.4
+  }
+}

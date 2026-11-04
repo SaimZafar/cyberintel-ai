@@ -1,0 +1,14 @@
+
+current settings  (median ms per event)
+  make features      40.6
+  classifier          9.5
+  anomaly score      36.7
+  SHAP               96.1
+  total             183.0
+
+one thread for the forest and XGBoost  (median ms per event)
+  make features      27.5
+  classifier          6.2
+  anomaly score      21.6
+  SHAP               89.0
+  total             144.3

@@ -1,0 +1,28 @@
+C:\Uni Work\SEM-6\MAD+AI PROJECT\ai-project-part\cyberintel-ai\.venv\Lib\site-packages\sklearn\linear_model\_logistic.py:599: ConvergenceWarning: lbfgs failed to converge after 500 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=500).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+{'accuracy': 0.6812, 'macro_f1': 0.4272, 'weighted_f1': 0.7241, 'binary_attack_f1': 0.9523}
+
+                precision    recall  f1-score   support
+
+        Normal      0.994     0.792     0.881     11200
+       Generic      0.996     0.977     0.986      8000
+      Exploits      0.870     0.379     0.528      6679
+       Fuzzers      0.554     0.673     0.608      3637
+           DoS      0.333     0.396     0.362      2453
+Reconnaissance      0.489     0.355     0.411      2098
+      Analysis      0.098     0.487     0.163       400
+      Backdoor      0.062     0.292     0.103       349
+     Shellcode      0.110     0.858     0.194       226
+         Worms      0.019     0.808     0.036        26
+
+      accuracy                          0.681     35068
+     macro avg      0.452     0.602     0.427     35068
+  weighted avg      0.823     0.681     0.724     35068
+

@@ -1,0 +1,31 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# data (large, and the UNSW license is unchecked)
+data/
+
+# old 34-feature backups
+models_34feat/
+reports_34feat/
+
+# regenerated research outputs
+reports/cv/
+reports/release/
+
+# throwaway package snapshots
+requirements_before_*.txt
+
+# replay samples made from dataset rows
+replay_events.jsonl
+replay_labels.jsonl
+replay_results.csv
+
+# experiment-only models (keep only the service models)
+models/*.pt
+models/tabnet_best*
+models/best_*
+models/mlp_*
+models/lgbm_best.json
+models/rf_best.jsonmodels/baseline_lr.joblib
