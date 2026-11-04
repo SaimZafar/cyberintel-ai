@@ -29,3 +29,5 @@ models/best_*
 models/mlp_*
 models/lgbm_best.json
 models/rf_best.jsonmodels/baseline_lr.joblib
+models/baseline_lr.joblib
+models/rf_best.json
