@@ -56,6 +56,11 @@ Wait for "Application startup complete" (the first start takes 10 to 30 seconds)
 | Field | Meaning |
 |---|---|
 | `attack_category` | Normal, Generic, Exploits, Fuzzers, DoS, Reconnaissance, Analysis, Backdoor, Shellcode or Worms |
+| `incident` | True if the flow becomes an incident in the app |
+| `alert` | True if an alert should be sent. The backend should use this, not `severity_level`, to decide on alerts |
+| `p_attack` | Probability that the flow is an attack, 0 to 1 |
+| `attack_family` | Family label, for example Exploit-type. Show this when the name is uncertain |
+| `name_is_confident`, `name_confidence` | Whether the exact attack name can be trusted, and how sure the model is |
 | `confidence` | Classifier confidence, 0 to 1 |
 | `anomaly_score` | 0 to 1, how unusual the flow is compared with normal traffic |
 | `severity_score`, `severity_level` | 0 to 100, and Low / Medium / High / Critical |
@@ -63,6 +68,8 @@ Wait for "Application startup complete" (the first start takes 10 to 30 seconds)
 | `top_features` | The main reasons, each with a plain-language sentence |
 | `explanation_text`, `suggested_steps` | Text for the analyst |
 | `model_version`, `processing_ms` | Version and time spent in the engine |
+
+**How alerts work.** A flow raises an alert when `p_attack` is above the threshold stored in `models/alert_config.json` (0.956). The severity score only describes how serious an alert is, so a flow can have a High severity level and still not raise an alert. The exact attack name is treated as trustworthy when `name_confidence` is 0.8 or higher. Otherwise show `attack_family` and the uncertainty note.
 
 See `docs/sample_responses.json` for real example responses with every field.
 
@@ -93,10 +100,11 @@ The alert threshold file `models/alert_config.json` is not created by `run_all.p
 
 ## Experiments
 
-`src/` also contains comparison and evaluation scripts (other model families, validation protocols, shift and threshold studies). Their outputs are in `reports/`. The service does not need any of them.
+`src/` also contains comparison and evaluation scripts (other model families, validation protocols, shift and threshold studies, a 7-family evaluation and a ratio-feature test). Their outputs are in `reports/`. The service does not need any of them.
 
 ## Limitations
 
 - UNSW-NB15 is a lab dataset with many duplicate flows and some identical flows carrying different labels, so no model can reach perfect accuracy on it.
 - Analysis, Backdoor and DoS are often confused with Exploits. The explanations show what the model relied on, not proof of malicious intent.
 - Performance drops on the official test partition compared with validation, so numbers from validation alone should not be quoted as expected real-world accuracy.
+- The alert threshold was tuned using half of the official test partition, so alert statistics on that partition are slightly optimistic.
