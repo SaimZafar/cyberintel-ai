@@ -33,3 +33,5 @@ models/baseline_lr.joblib
 models/rf_best.json
 models/baseline_lr.joblib
 models/rf_best.json
+
+models/classifier_family_v1.joblib
