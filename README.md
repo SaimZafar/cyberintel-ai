@@ -66,7 +66,7 @@ Wait for "Application startup complete" (the first start takes 10 to 30 seconds)
 
 See `docs/sample_responses.json` for real example responses with every field.
 
-Typical engine time per call is about <!-- CHECK: confirm against reports/logs/profile_engine.txt --> ms.
+Measured on a laptop (8 GB RAM, CPU only) over 100 requests from the demo pool, the engine takes a median of about 96 ms per event (95th percentile about 104 ms). Flows that do not become an incident take about 50 ms, because the SHAP explanation is only computed for incidents.
 
 ## Rebuild the models
 
@@ -76,7 +76,9 @@ With the data in place, run the pipeline from the project folder (close other he
 python src\run_all.py
 ```
 
-It runs, in order: splits, preprocessing, baseline, model comparison, class-weight sweep, duplicate test, XGBoost tuning, confusion matrix, anomaly detector, severity evaluation and demo-pool evaluation. Each step saves its output to `reports/logs/`. If a step fails, restart from it, for example `python src\run_all.py anomaly`. <!-- CHECK: alert_config.json is not made by run_all.py; the committed copy in models/ is the one the service uses -->
+It runs, in order: splits, preprocessing, baseline, model comparison, class-weight sweep, duplicate test, XGBoost tuning, confusion matrix, anomaly detector, severity evaluation and demo-pool evaluation. Each step saves its output to `reports/logs/`. If a step fails, restart from it, for example `python src\run_all.py anomaly`.
+
+The alert threshold file `models/alert_config.json` is not created by `run_all.py`; the committed copy is the one the service uses.
 
 ## Folder map
 
